@@ -38,5 +38,5 @@
   "forwardPorts": [8080, 6443, 8888],
 
   "postCreateCommand": "echo 'Platform image cargada correctamente.'",
-  "postStartCommand": "/home/z2h/scripts/script.sh"
+  "postStartCommand": "bash /workspaces/student-test/.devcontainer/script.sh"
 }
