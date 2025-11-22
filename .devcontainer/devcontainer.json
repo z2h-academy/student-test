@@ -8,6 +8,21 @@
 
   "remoteUser": "z2h",
 
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": false
+    }
+  },
+
+  "runArgs": [
+    "--privileged"
+  ],
+
+  "mounts": [
+    "source=/var/lib/docker,target=/var/lib/docker,type=volume"
+  ],
+
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash",
     "editor.formatOnSave": true
@@ -24,21 +39,6 @@
       ]
     }
   },
-
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "moby": false
-    }
-  },
-
-  "runArgs": [
-    "--privileged"
-  ],
-
-  "mounts": [
-    "source=/var/lib/docker,target=/var/lib/docker,type=volume"
-  ],
 
   "forwardPorts": [8080, 6443, 8888],
 
