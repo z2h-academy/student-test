@@ -1,0 +1,22 @@
+{
+  "name": "DevContainer Base",
+  "image": "mcr.microsoft.com/devcontainers/base:latest",
+
+  // Ejecutar script al crear el contenedor
+ // "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+
+  // Configuración del usuario
+  "remoteUser": "vscode"
+}

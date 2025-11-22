@@ -1,9 +1,22 @@
 {
-  "name": "DevContainer Base",
-  "image": "mcr.microsoft.com/devcontainers/base:latest",
+  "name": "STUDENT-TEST Platform Workspace",
 
-  // Ejecutar script al crear el contenedor
- // "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+  "build": {
+    "dockerfile": "./Dockerfile.platform",
+    "context": "."
+  },
+
+  "remoteUser": "z2h",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
+  },
+
+  "runArgs": [
+    "--privileged"
+  ],
 
   "customizations": {
     "vscode": {
@@ -17,6 +30,12 @@
     }
   },
 
-  // Configuración del usuario
-  "remoteUser": "vscode"
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.formatOnSave": true
+  },
+
+  "forwardPorts": [8080, 6443, 8888],
+
+  "postCreateCommand": "echo 'Platform image cargada correctamente.'"
 }
