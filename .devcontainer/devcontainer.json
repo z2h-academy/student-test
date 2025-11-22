@@ -10,23 +10,13 @@
 
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "moby": false
+      "version": "latest"
     }
   },
 
   "runArgs": [
     "--privileged"
   ],
-
-  "mounts": [
-    "source=/var/lib/docker,target=/var/lib/docker,type=volume"
-  ],
-
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "editor.formatOnSave": true
-  },
 
   "customizations": {
     "vscode": {
@@ -38,6 +28,11 @@
         "ms-python.vscode-pylance"
       ]
     }
+  },
+
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.formatOnSave": true
   },
 
   "forwardPorts": [8080, 6443, 8888],
