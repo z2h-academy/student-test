@@ -8,10 +8,15 @@
 
   "remoteUser": "z2h",
 
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "editor.formatOnSave": true
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
   },
+
+  "runArgs": [
+    "--privileged"
+  ],
 
   "customizations": {
     "vscode": {
@@ -25,5 +30,12 @@
     }
   },
 
-  "postCreateCommand": "bash .devcontainer/setup.sh"
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.formatOnSave": true
+  },
+
+  "forwardPorts": [8080, 6443, 8888],
+
+  "postCreateCommand": "echo 'Platform image cargada correctamente.'"
 }
