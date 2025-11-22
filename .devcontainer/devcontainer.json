@@ -1,17 +1,9 @@
 {
-  "name": "STUDENT-TEST Platform Workspace",
+  "name": "DevContainer Base",
+  "image": "mcr.microsoft.com/devcontainers/base:latest",
 
-  "build": {
-    "dockerfile": "./Dockerfile.platform",
-    "context": "."
-  },
-
-  "remoteUser": "z2h",
-
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "editor.formatOnSave": true
-  },
+  // Ejecutar script al crear el contenedor
+  "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
 
   "customizations": {
     "vscode": {
@@ -25,5 +17,6 @@
     }
   },
 
-  "postCreateCommand": "bash .devcontainer/setup.sh"
+  // Configuración del usuario
+  "remoteUser": "z2h"
 }
