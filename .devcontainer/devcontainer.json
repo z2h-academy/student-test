@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:latest",
 
   // Ejecutar script al crear el contenedor
-  "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+ // "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
 
   "customizations": {
     "vscode": {
