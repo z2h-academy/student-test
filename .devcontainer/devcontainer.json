@@ -25,9 +25,19 @@
     }
   },
 
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": false
+    }
+  },
+
   "runArgs": [
-    "--privileged",
-    "--network=host"
+    "--privileged"
+  ],
+
+  "mounts": [
+    "source=/var/lib/docker,target=/var/lib/docker,type=volume"
   ],
 
   "forwardPorts": [8080, 6443, 8888],
