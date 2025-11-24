@@ -33,13 +33,18 @@ RUN curl -sLO "https://storage.googleapis.com/kubernetes-release/release/$(curl 
 RUN curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
 ############################################################
-# 5. Copiar scripts (solo almacenar, no ejecutar)
+# 5. Instalar Helm
+############################################################
+RUN curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+############################################################
+# 6. Copiar scripts (solo almacenar, no ejecutar)
 ############################################################
 COPY scripts/ /opt/scripts/
 RUN chmod -R +x /opt/scripts
 
 ############################################################
-# 6. Configuración final
+# 7. Configuración final
 ############################################################
 USER z2h
 WORKDIR /home/z2h
