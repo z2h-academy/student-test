@@ -10,7 +10,7 @@ RUN apt-get update && \
         curl ca-certificates git jq \
         bash-completion \
         iptables iproute2 iputils-ping dnsutils \
-        python3 python3-pip \
+        python3 python3-pip python3-venv \
         vim nano less htop unzip \
         sudo && \
     rm -rf /var/lib/apt/lists/*
